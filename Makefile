@@ -1,14 +1,21 @@
 sail := vendor/bin/sail
 
-.PHONY: setup
-setup:
+.PHONY: start
+start:
+	$(sail) up -d
+
+.PHONY: stop
+stop:
+	$(sail) down
+
+.PHONY: copy-env
+copy-env:
 	cp ./.env.example ./.env
-	make start
+
+.PHONY: generate
+generate:
 	$(sail) artisan key:generate
 	$(sail) artisan jwt:secret
-	make migrate
-	make seed
-	make stop
 
 .PHONY: migrate
 migrate:
@@ -17,16 +24,4 @@ migrate:
 .PHONY: seed
 seed:
 	$(sail) artisan db:seed
-
-.PHONY: start
-start:
-	$(sail) up
-
-.PHONY: start-deamon
-start:
-	$(sail) up -d
-
-.PHONY: stop
-stop:
-	$(sail) down
 
