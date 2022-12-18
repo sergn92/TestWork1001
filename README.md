@@ -3,7 +3,7 @@
 ### Первый запуск
 Конфигурируем composer (выполнить из каталога проекта) `docker run --rm -u "$(id -u):$(id -g)" -v "$(pwd):/var/www/html" -w /var/www/html laravelsail/php80-composer:latest composer install --ignore-platform-reqs`
 
-Копируем файл конфигурации (для упрощения внесены все данные для запуска) `copy-env`
+Копируем файл конфигурации (для упрощения внесены все данные для запуска) `make copy-env`
 
 Запускаем сервер `make start`
 
