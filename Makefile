@@ -2,10 +2,12 @@ sail := vendor/bin/sail
 
 .PHONY: setup
 setup:
-	$(sail) composer i
 	cp ./.env.example ./.env
+	make start
+	$(sail) composer i
 	$(sail) artisan key:generate
 	$(sail) artisan jwt:secret
+	make stop
 
 .PHONY: migrate
 migrate:
