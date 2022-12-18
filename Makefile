@@ -4,7 +4,6 @@ sail := vendor/bin/sail
 setup:
 	cp ./.env.example ./.env
 	make start
-	$(sail) composer i
 	$(sail) artisan key:generate
 	$(sail) artisan jwt:secret
 	make migrate
@@ -16,7 +15,7 @@ migrate:
 	$(sail) artisan migrate
 
 .PHONY: seed
-migrate:
+seed:
 	$(sail) artisan db:seed
 
 .PHONY: start
