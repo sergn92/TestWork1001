@@ -7,8 +7,6 @@
 
 Запускаем сервер `make start`
 
-Генерируем ключ приложение + ключ для JWT `make generate`
-
 Создаем структуру DB `make migrate`
 
 Заполняем DB `make seed`
@@ -16,4 +14,8 @@
 Запускаем окружение `make start`
 
 Останавливаем окружение `make stop`
+
+### Postman
+Доступные логины - `admin@gmail.com`, `editor@gmail.com`, `user@gmail.com`
+Пароль - `password`
 

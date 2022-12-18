@@ -11,6 +11,7 @@ stop:
 .PHONY: copy-env
 copy-env:
 	cp ./.env.example ./.env
+	make stop
 
 .PHONY: generate
 generate:
